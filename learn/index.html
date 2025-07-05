@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/cdn.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+
+  <body>
+    <section>
+      <div class="card-1">
+        <h3>Event Timing</h3> 
+        <div class="event-thearter" id="thearter">
+          <input type="text" placeholder=" Enter Your Cinema Theatre Name" />
+          <select name="" id="theaterSelect" onchange="loadEventDetails(this.value)" >
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="card-form">
+            <label for="">Event Date Range</label>
+            <input type="date" id="startDate" />
+            
+            <input type="date" id="endDate" />
+        
+          </div>
+          <div class="card-form">
+            <label for="">Default Daily Start/End Time</label>
+            <div class="time-form">
+              <input type="time" id="startTime" />
+              <input type="time" id="endTime" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="showtime">
+      <div class="card-2">
+        <h3>Daily Showtimes</h3>
+        <div class="div-padding">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tdata">
+              <!-- <tr> -->
+              <!-- <td><h4>A</h4></td>
+                <td><input type="time" /></td>
+                <td><input type="time" /></td>
+                <td>Remove</td>
+              </tr> -->
+              <!-- </tr> -->
+            </tbody>
+          </table>
+          <div class="add-price">
+            <button class="addBtn1" id="Addprice">
+              <div class="sign1">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M12 5v14M5 12h14"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="text1">Add Showtime</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticketcategories">
+      <div class="ticket-card">
+        <h3>Ticket Categoreies</h3>
+        <div class="div-padding">
+          <table>
+            <thead>
+              <tr>
+                <th>Category Name</th>
+                <th>Price</th>
+                <th>Ticket Count</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tdata2"></tbody>
+          </table>
+          <div class="add-category">
+            <button class="addBtn2" id="Addcategory">
+              <div class="sign2">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M12 4v16M4 12h16"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="text2">Add Ticket Category</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="pricing-plans">
+        <h3>Pricing plans</h3>
+        <div class="div-padding">
+          <table>
+            <thead>
+              <tr>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Showtimes</td>
+                <td>Prices By Category</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody id="tdata3">
+              <!-- <tr>
+                <td>
+                  <div class="priceinput">
+                    <input type="text" />
+                    <span><i class="fa-solid fa-calendar-days icon2"></i></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="priceinput">
+                    <input type="text" />
+                    <span><i class="fa-solid fa-calendar-days icon2"></i></span>
+                  </div>
+                </td>
+                <td>
+                  <div class="show-ckeckbox">
+                    <input type="checkbox" id="show" />
+                    <label for="show">A</label>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="pricing-showtime">
+                    <div>
+                      <input type="checkbox" />
+                      <label for="">Vip</label>
+                    </div>
+                    <div class="pricing-showtime-in">
+                      <input type="text" />
+                      <input type="text" />
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <button onclick="this.closest('tr').remove()">Remove</button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+          <div class="add-priceplan">
+            <button class="addBtn3" id="addpriceplan">
+              <div class="sign3">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M12 4v16M4 12h16"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="text3">Add Pricing Plan</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="margin-left: 1344px; margin-top: 20px">
+      <button>
+        <span class="box" id="update"> Upload </span>
+      </button>
+      <button>
+        <span class="box" id="Clear">Clear All</span>
+      </button>
+      <button>
+        <span class="box" id="ReUpdate">Update</span>
+      </button>
+    </div>
+    <h1 id="element"></h1>
+    <div id="custom-alert" class="alert-box">
+      <p id="alert-message"></p>
+      <button onclick="closeCustomAlert()">OK</button>
+    </div>
+
+    <script src="datefns.js"></script>
+  </body>
+</html>
+
+
+
+ https://chatgpt.com/share/6867dddc-03dc-8004-bcc2-9ce6ea5cc207
+
+
+ https://chatgpt.com/share/68689c20-80bc-8003-be7f-c9550419d942
